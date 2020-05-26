@@ -69,3 +69,35 @@ delete_issue_labels <- function(labels,
               .f = ~gh("DELETE /repos/:owner/:repo/labels/:name",
                         name = .x))
 }
+
+get_labelled_issues <- function(label,
+                                repo_spec = github_repo_spec(),
+                                auth_token = github_token(),
+                                host = NULL){
+
+  gh <- base_gh(repo_spec,auth_token,host)
+  issues <- gh("GET /repos/:owner/:repo/issues",
+               labels = label)
+
+  return(issues)
+}
+
+get_aclu_repos <- function(org = "aclu-national", type = "private", team_slug = NULL,
+                           repo_spec = github_repo_spec(),
+                           auth_token = github_token(),
+                           host = NULL
+                           ){
+
+  gh <- base_gh(repo_spec,auth_token,host)
+  gh_cmd <- "/orgs/:org/"
+  args <- list(org = org, type = type)
+  if(!is.null(team_slug)){
+    gh_cmd <- paste0(gh_cmd,"teams/:team_slug/")
+    args <- c(args, team_slug = team_slug)
+  }
+  gh_cmd <- paste0(gh_cmd,"repos")
+  args <- c(endpoint = gh_cmd, args)
+  repos <- do.call(gh, args = args)
+
+  return(repos)
+}

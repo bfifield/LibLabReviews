@@ -81,14 +81,6 @@ get_aclu_labels <- function(){
   return(labels_list)
 }
 
-delete_aclu_issue_labels <- function(repo_spec = github_repo_spec(),
-                                     auth_token = github_token(), #todo: replace with liblab config approach
-                                     host = NULL){
-
-
-
-}
-
 # todo: when labels get auto-deleted when this is run,
 # they need to be reapplied if they get put back in
 use_aclu_issue_labels <- function(repo_spec = github_repo_spec(),

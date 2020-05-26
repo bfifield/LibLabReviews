@@ -12,6 +12,10 @@ LazyData: true
 RoxygenNote: 6.1.1
 Imports: 
     git2r,
-    magrittr
+    usethis,
+    magrittr,
+    emo,
+    stringr,
+    glue
 URL: https://github.com/aaron-horowitz/LibLabReviews
 BugReports: https://github.com/aaron-horowitz/LibLabReviews/issues

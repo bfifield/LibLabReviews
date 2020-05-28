@@ -2,6 +2,4 @@
 .RData
 .Rproj.user
 data/*
-config/*
-config.yaml
-config.yml
+/config/*

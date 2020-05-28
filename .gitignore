@@ -3,3 +3,4 @@
 .Rproj.user
 data/*
 /config/*
+/inst/resources/*/ISSUE_TEMPLATE/*.html

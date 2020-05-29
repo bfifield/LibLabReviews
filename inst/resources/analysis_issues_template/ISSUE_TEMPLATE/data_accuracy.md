@@ -13,7 +13,7 @@ labels: 'Data Accuracy :microscope:'
 
 ## How'd You Find this Issue
 <!--- Select which of the below reflects how you found  -->
-- [ ] spot check (eg randomly reviewed X rows from a dataset)
+- [ ] Spot check (eg randomly reviewed X rows from a dataset)
 - [ ] Fan out detection (eg number of rows increased somewhere)
 - [ ] Assertions / Tests (eg unit tests, formal expectations)
 - [ ] Informal Checks (eg added a bit of code to print summary statistic)

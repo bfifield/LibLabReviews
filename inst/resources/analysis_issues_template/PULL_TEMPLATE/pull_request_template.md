@@ -8,7 +8,7 @@
 - [ ] Did you run `styler` on your files to clean things up before pushing?
 - [ ] Did you add visualizations/results that demonstrate your approach / explorations?
 - [ ] Did you update your project README or other documentation to help your reviewer?
-- [ ] ** Could you return to this 6 months from now and know what's going on and agree with choices you've made? **
+- [ ] **Could you return to this 6 months from now and know what's going on and agree with choices you've made?**
 
 ## Revieweer Checklist
 

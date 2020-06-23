@@ -16,6 +16,7 @@ Imports:
     magrittr,
     emo,
     stringr,
-    glue
+    glue,
+    fs
 URL: https://github.com/aaron-horowitz/LibLabReviews
 BugReports: https://github.com/aaron-horowitz/LibLabReviews/issues

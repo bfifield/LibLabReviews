@@ -2,13 +2,10 @@ Package: LibLabReviews
 Version: 0.1.0
 Type: Package
 Title: Encourage Effective Peer Review Practices with Useful Tooling
-Description: A toolset that enables easier, more standardized 
-and more effective peer reviews in a data science setting. Given a project, 
-the tools provided make pull requests, issue creation and other part of peer review easier and 
-provide templates with learnings from other review processes.
+Description: A toolset that enables easier, more standardized and more effective peer reviews in a data science setting. Given a project, the tools provided make pull requests, issue creation and other part of peer review easier and provide templates with learnings from other review processes.
 Authors@R: c(
-    person("Aaron", "Horowitz", , "ahorowitz@aclu.org", "aut",
-           comment = c(ORCID = "0000-0003-4757-117X")),
+    person("Aaron", "Horowitz", , "ahorowitz@aclu.org", 
+           role = c("aut","cre")),
     person("ACLU", role = c("cph", "fnd"))
     )
 License: GPL-2 | file LICENSE

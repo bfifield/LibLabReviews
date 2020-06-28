@@ -19,6 +19,8 @@ Imports:
     emo,
     stringr,
     glue,
-    fs
+    fs,
+    config,
+    yaml
 URL: https://github.com/aaron-horowitz/LibLabReviews
 BugReports: https://github.com/aaron-horowitz/LibLabReviews/issues

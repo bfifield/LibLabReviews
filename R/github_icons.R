@@ -6,7 +6,7 @@ get_github_icons <- function(){
     mutate(is_exact_name = TRUE)
 
   #todo - change to system.file packaeg based path(s)
-  github_page <- jsonlite::read_json("inst/emojis.json",simplifyVector = TRUE) %>%
+  github_page <- jsonlite::read_json("inst/resources/emojis.json",simplifyVector = TRUE) %>%
     enframe(name = "github_name", value = "png_url") %>%
     unnest(png_url) %>%
     mutate(github_txt = paste0(":",github_name,":"))

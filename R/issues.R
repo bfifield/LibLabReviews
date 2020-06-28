@@ -9,8 +9,8 @@ convert_labels_template <- function(path){
                                                  )
                            )
 
-  labels_coloured <- filter(labels_list, !is.na(colour))
-  labels_remaining <- filter(labels_list,is.na(colour))
+  labels_coloured <- dplyr::filter(labels_list, !is.na(colour))
+  labels_remaining <- dplyr::filter(labels_list,is.na(colour))
   if(nrow(labels_remaining) > 0){
     min_color <- unname(LibLabTemplates::aclu_colors("red"))
     med_color <- unname(LibLabTemplates::aclu_colors("blue"))
@@ -19,7 +19,7 @@ convert_labels_template <- function(path){
     cols <- scales::gradient_n_pal(c(min_color,med_color,max_color))(x)
     labels_remaining$colour <- cols
   }
-  res <- bind_rows(labels_coloured,labels_remaining)
+  res <- dplyr::bind_rows(labels_coloured,labels_remaining)
 
   return(res)
 }
@@ -33,20 +33,20 @@ apply_issue_labels <- function(.labels_data,
                                   ){
 
   labels_df <- .labels_data %>%
-    mutate(label_final = paste(label,icon),
+    dplyr::mutate(label_final = paste(label,icon),
            colour_final = stringr::str_remove_all(colour,"#") %>% stringr::str_to_lower(),
            descriptions_final = description#glue::glue("{description} \n (eg {examples})")
            ) #descriptions
 
   #delete labels first to be sure
-  delete_issue_labels(pull(labels_df,label_final),
+  delete_issue_labels(dplyr::pull(labels_df,label_final),
                       repo_spec = repo_spec, auth_token = auth_token, host = host
                       )
 
   usethis::use_github_labels(
-    labels = pull(labels_df,label_final),
-    colours = deframe(select(labels_df,label_final,colour_final)),
-    descriptions = deframe(select(labels_df,label_final,descriptions_final)),
+    labels = dplyr::pull(labels_df,label_final),
+    colours = tibble::deframe(dplyr::select(labels_df,label_final,colour_final)),
+    descriptions = tibble::deframe(dplyr::select(labels_df,label_final,descriptions_final)),
     delete_default = TRUE,
     repo_spec = repo_spec,
     auth_token = auth_token,

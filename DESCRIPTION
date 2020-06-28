@@ -21,6 +21,10 @@ Imports:
     glue,
     fs,
     config,
-    yaml
+    yaml,
+    dplyr,
+    tidyr,
+    tibble,
+    scales
 URL: https://github.com/aaron-horowitz/LibLabReviews
 BugReports: https://github.com/aaron-horowitz/LibLabReviews/issues

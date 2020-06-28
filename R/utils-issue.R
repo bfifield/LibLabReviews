@@ -39,8 +39,9 @@ delete_issue_labels <- function(labels,
                                host = NULL){
 
   gh <- base_gh(repo_spec,auth_token,host)
+  safe_gh <- purrr::possibly(gh, otherwise = NULL)
   purrr::walk(labels,
-              .f = ~gh("DELETE /repos/:owner/:repo/labels/:name",
+              .f = ~safe_gh("DELETE /repos/:owner/:repo/labels/:name",
                         name = .x))
 }
 

@@ -1,3 +1,9 @@
+resources <- function(...){
+  system.file("resources", ...,
+              package = "LibLabReviews"
+  )
+}
+
 #' Review Resources
 #'
 #' This function series provides easy file access
@@ -15,9 +21,7 @@ review_resources <- function(type = "analysis", ...) {
 
   type = match.arg(type)
 
-  system.file("resources", type, ...,
-              package = "LibLabReviews"
-  )
+  resources(type, ...)
 }
 
 #' @export
@@ -36,4 +40,13 @@ pull_resources <- function(type = "analysis",...){
   type = match.arg(type)
 
   review_resources(type = type, "PULL_TEMPLATE",...)
+}
+
+#' @export
+#' @rdname review_resources
+label_resources <- function(type = "analysis",...){
+
+  type = match.arg(type)
+
+  review_resources(type = type, "LABEL_TEMPLATE",...)
 }

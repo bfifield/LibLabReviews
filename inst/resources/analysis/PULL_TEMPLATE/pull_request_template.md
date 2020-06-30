@@ -54,19 +54,12 @@
 
 ## Environment
 
-<!--- copy and paste results from the r chunk below --->
+<!--- copy and paste results from the running the reproducibility_receipt() function --->
 
-<details><summary>Reprodicibility Recceipt</summary>
+## Reprodicibility Recceipt
 
 ```r
-# Datetime
-Sys.time()
-
-# Repo
-git2r::repository()
-
-# Session Info
-sessioninfo::session_info()
+### RUN THIS FUNCTION AND REPLACE THIS CHUNK BY PASTING FROM CLIPBOARD
+LibLabReviews::reproducibility_receipt()
 ```
 
-</details>

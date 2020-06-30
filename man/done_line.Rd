@@ -2,9 +2,15 @@
 % Please edit documentation in R/utils-cli.R
 \name{done_line}
 \alias{done_line}
-\title{Print clean done text during project setup}
+\alias{warning_line}
+\alias{info_line}
+\title{Print clean cli information text}
 \usage{
 done_line(..., .envir = parent.frame())
+
+warning_line(..., .envir = parent.frame())
+
+info_line(..., .envir = parent.frame())
 }
 \arguments{
 \item{...}{Any params usable by \code{\link[glue]{glue}}}
@@ -15,8 +21,10 @@ done_line(..., .envir = parent.frame())
 invisible
 }
 \description{
-Print clean done text during project setup
+Print clean cli information text
 }
 \examples{
 done_line("wooo....bullets")
+warning_line("wooo....bullets")
+info_line("wooo....bullets")
 }

@@ -25,6 +25,9 @@ Imports:
     dplyr,
     tidyr,
     tibble,
-    scales
+    scales,
+    reprex,
+    knitr,
+    clipr
 URL: https://github.com/aaron-horowitz/LibLabReviews
 BugReports: https://github.com/aaron-horowitz/LibLabReviews/issues

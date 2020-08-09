@@ -3,7 +3,8 @@ github_token <- usethis::github_token
 
 base_gh <- function(repo_spec = github_repo_spec(),
                     auth_token = github_token(),
-                    host = NULL
+                    host = NULL,
+                    accept_header = "application/vnd.github.symmetra-preview+json"
 ){
 
   #straight from usethis::use_github_labels
@@ -14,7 +15,7 @@ base_gh <- function(repo_spec = github_repo_spec(),
   gh <- function(endpoint, ...) {
     out <- gh::gh(endpoint, ..., owner = usethis:::spec_owner(repo_spec),
                   repo = usethis:::spec_repo(repo_spec), .token = auth_token,
-                  .api_url = host, .send_headers = c(Accept = "application/vnd.github.symmetra-preview+json"))
+                  .api_url = host, .send_headers = c(Accept = accept_header))
     if (identical(out[[1]], "")) {
       list()
     }

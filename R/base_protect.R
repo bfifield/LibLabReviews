@@ -60,6 +60,20 @@ protect_branch <- function(branch = "master",
   safe_gh <- purrr::safely(gh)
   owner = usethis:::spec_owner(repo_spec)
   repo = usethis:::spec_repo(repo_spec)
+
+  #check if branch already has protection settings
+  branch_status <- get_branch_protection(branch = branch,
+                                             return_type = "exists",
+                                             repo_spec = repo_spec, auth_token = auth_token, host = host
+  )
+  if(branch_status == TRUE){
+    if(overwrite == TRUE){
+      info_line(glue::glue("{branch} already has protection settings. Overwriting existing settings."))
+    } else {
+      stop(glue::glue("{branch} already has protection settings. To replace these change add `overwrite = TRUE`."))
+    }
+  }
+
   put_text <- glue::glue("PUT /repos/{owner}/{repo}/branches/{branch}/protection")
   res <- safe_gh(put_text,
                required_status_checks = NA,

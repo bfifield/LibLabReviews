@@ -33,3 +33,13 @@ get_branch_protection <- function(branch = "master",
 
   return(res)
 }
+
+is_master_protected <- function(repo_spec = github_repo_spec(), auth_token = github_token(),
+                                host = NULL
+){
+  get_branch_protection(branch = "master", return_type = "exists",
+                        repo_spec = repo_spec,
+                        auth_token = auth_token,
+                        host = host
+                        )
+}

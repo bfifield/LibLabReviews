@@ -44,7 +44,8 @@ is_master_protected <- function(repo_spec = github_repo_spec(), auth_token = git
                         )
 }
 
-add_branch_protection <- function(branch = "master",
+protect_branch <- function(branch = "master",
+                                  overwrite = FALSE,
                                   required_approving_review_count = 1,
                                   required_linear_history = TRUE,
                                   allow_force_pushes = FALSE,

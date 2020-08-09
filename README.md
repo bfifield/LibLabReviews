@@ -1,0 +1,42 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# LibLabReviews
+
+<!-- badges: start -->
+
+<!-- badges: end -->
+
+The goal of LibLabReviews is to provide a toolset that enables easier,
+more standardized and more effective peer reviews in a data science
+setting. Given a project, the tools provided make pull requests, issue
+creation and other part of peer review easier and provide templates with
+learnings from other review processes.
+
+## Installation
+
+LibLabReviews will be installed as a part of installation of `LibLabs`
+so should typically not be installed alone. However, if you do want to
+install alone for a specific reason (eg different release versions), you
+can do so by following the instructions for the installation of any
+private `LibLabs` package.
+
+``` r
+remotes::install_github('aclu-national/LibLabReviews')
+```
+
+## Usage
+
+Most users are unlikely to use the features of this package directly. It
+will be included in any future project installs. Howevers, the core
+function is `use_aclu_review_template` which adds files to your
+repository that will be useful for future code reviews.
+
+``` r
+library(LibLabReviews)
+use_aclu_review_template()
+```
+
+Once this has run, anytime you choose to file either an issue or a pull
+request, it will provide a template / checklist to support the process
+for you.

@@ -18,37 +18,23 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of LibLabReviews is to ...
+The goal of LibLabReviews is to provide a toolset that enables easier, more standardized and more effective peer reviews in a data science setting. Given a project, the tools provided make pull requests, issue creation and other part of peer review easier and provide templates with learnings from other review processes.
 
 ## Installation
 
-You can install the released version of LibLabReviews from [CRAN](https://CRAN.R-project.org) with:
+LibLabReviews will be installed as a part of installation of `LibLabs` so should typically not be installed alone. However, if you do want to install alone for a specific reason (eg different release versions), you can do so by following the instructions for the installation of any private `LibLabs` package.
 
 ``` r
-install.packages("LibLabReviews")
+remotes::install_github('aclu-national/LibLabReviews')
 ```
 
-## Example
+## Usage
 
-This is a basic example which shows you how to solve a common problem:
+Most users are unlikely to use the features of this package directly. It will be included in any future project installs. Howevers, the core function is `use_aclu_review_template` which adds files to your repository that will be useful for future code reviews.
 
-```{r example}
+```{r example, eval=FALSE}
 library(LibLabReviews)
-## basic example code
+use_aclu_review_template()
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
-
-```{r cars}
-summary(cars)
-```
-
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date.
-
-You can also embed plots, for example:
-
-```{r pressure, echo = FALSE}
-plot(pressure)
-```
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub!
+Once this has run, anytime you choose to file either an issue or a pull request, it will provide a template / checklist to support the process for you.

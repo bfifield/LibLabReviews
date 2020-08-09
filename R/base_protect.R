@@ -98,3 +98,28 @@ protect_branch <- function(branch = "master",
 
   return(invisible(res$result))
 }
+
+protect_master_branch <- function(required_approving_review_count = 1,
+                                  overwrite = TRUE,
+                                  required_linear_history = TRUE,
+                                  allow_force_pushes = FALSE,
+                                  allow_deletions = FALSE,
+                                  enforce_admins = TRUE,
+                                  repo_spec = github_repo_spec(),
+                                  auth_token = github_token(),
+                                  host = NULL){
+
+  protect_branch(
+    branch = "master",
+    overwrite = overwrite,
+    required_approving_review_count = 1,
+    required_linear_history = TRUE,
+    allow_force_pushes = FALSE,
+    allow_deletions = FALSE,
+    enforce_admins = TRUE,
+    repo_spec = github_repo_spec(),
+    auth_token = github_token(),
+    host = NULL
+  )
+
+}

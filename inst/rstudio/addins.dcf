@@ -1,5 +1,5 @@
-Name: New Addin Name
-Description: New Addin Description
-Binding: new_addin
+Name: Apply ACLU Review Templates
+Description: Add files and configuration for applying ACLU Review Templates
+Binding: use_aclu_review_template
 Interactive: false
 

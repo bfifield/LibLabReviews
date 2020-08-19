@@ -56,7 +56,7 @@
 
 <!--- copy and paste results from the running the reproducibility_receipt() function --->
 
-## Reprodicibility Recceipt
+## Reproducibility Receipt
 
 ```r
 ### RUN THIS FUNCTION AND REPLACE THIS CHUNK BY PASTING FROM CLIPBOARD
